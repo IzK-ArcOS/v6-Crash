@@ -4,11 +4,9 @@
   import { CrashReport } from "$ts/stores/crash";
   import { sleep } from "$ts/util";
   import { onMount } from "svelte";
+  import { CrashPrefix, CrashViteDev } from "./ts/store";
 
   let show = false;
-
-  const prefix = `---! [ ArcOS crashed ] !---\n\nBelow you'll find the log, which may contain information about the crash.\nA bug report has been sent to the Reports server informing it of the crash.\n\n`;
-
   let log = "";
 
   onMount(async () => {
@@ -18,13 +16,11 @@
 
   LogStore.subscribe(() => {
     const Log = `\n--- LOG ---\n\n${compileStringLog().join("\n")}`;
-    const crashRep = $CrashReport;
-    const reportStr = crashRep ? `${crashRep.title}\n\n${crashRep.body}\n` : "";
-    const extra = import.meta.env.DEV
-      ? "WARNING: ArcOS in Vite Development will not send Bug Reports to prevent spamming of servers.\n\n"
-      : "";
+    const report = $CrashReport;
+    const reportStr = report ? `${report.title}\n\n${report.body}\n` : "";
+    const notice = import.meta.env.DEV ? CrashViteDev : "";
 
-    log = `${prefix}${extra}${reportStr}${Log}`;
+    log = `${CrashPrefix}${notice}${reportStr}${Log}`;
   });
 </script>
 
