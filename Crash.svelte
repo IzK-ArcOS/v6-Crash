@@ -30,23 +30,19 @@
 
 <div class="state-crash fullscreen">
   {#if show}
-    <textarea readonly bind:value={log} />
+    <textarea readonly bind:value={log} class="fullscreen" />
   {/if}
 </div>
 
 <style scoped>
   textarea {
     border: none;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    color: #fff;
+    background-color: #111;
+    color: #bbb;
     font-family: "Source Code Pro", monospace;
-    font-size: 13px;
+    font-size: 14px;
     resize: none !important;
     overflow-x: hidden;
+    padding: 20px;
   }
 </style>
