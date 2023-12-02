@@ -15,7 +15,7 @@
   });
 
   LogStore.subscribe(() => {
-    const Log = `\n--- LOG ---\n\n${compileStringLog().join("\n")}`;
+    const Log = `\n--- LOG ---\n\n${compileStringLog().reverse().join("\n")}`;
     const report = $CrashReport;
     const reportStr = report ? `${report.title}\n\n${report.body}\n` : "";
     const notice = import.meta.env.DEV ? CrashViteDev : "";
