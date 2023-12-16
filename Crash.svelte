@@ -6,6 +6,7 @@
   import { onMount } from "svelte";
   import { CrashPrefix, CrashViteDev } from "./ts/store";
 
+  export let inline = false;
   let show = false;
   let log = "";
 
@@ -18,15 +19,20 @@
     const Log = `\n--- LOG ---\n\n${compileStringLog().reverse().join("\n")}`;
     const report = $CrashReport;
     const reportStr = report ? `${report.title}\n\n${report.body}\n` : "";
-    const notice = import.meta.env.DEV ? CrashViteDev : "";
-
-    log = `${CrashPrefix}${notice}${reportStr}${Log}`;
+    const notice = !inline && import.meta.env.DEV ? CrashViteDev : "";
+    const prefix = inline ? "" : CrashPrefix;
+    log = `${prefix}${notice}${reportStr}${Log}`;
   });
 </script>
 
-<div class="state-crash fullscreen">
+<div class="state-crash" class:fullscreen={!inline}>
   {#if show}
-    <textarea readonly bind:value={log} class="fullscreen" />
+    <textarea
+      readonly
+      bind:value={log}
+      class:fullscreen={!inline}
+      class:inline
+    />
   {/if}
 </div>
 
@@ -40,5 +46,10 @@
     resize: none !important;
     overflow-x: hidden;
     padding: 20px;
+  }
+
+  textarea.inline {
+    width: 100%;
+    height: 100%;
   }
 </style>
