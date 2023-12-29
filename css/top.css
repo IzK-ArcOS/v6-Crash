@@ -1,0 +1,9 @@
+div.state-ArcOS-crash div.top {
+  height: calc(100% - 100px);
+}
+
+div.state-ArcOS-crash div.top textarea,
+div.state-ArcOS-crash div.top div.more-info {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,36 @@
+div.state-ArcOS-crash div.crash-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  font-size: 16px;
+  color: #ccc;
+}
+
+div.state-ArcOS-crash div.crash-content span.icon {
+  font-size: 150px;
+  opacity: 0.2;
+}
+
+div.state-ArcOS-crash div.crash-content h1 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+div.state-ArcOS-crash div.crash-content p.info {
+  width: 400px;
+  margin: 10px 0;
+}
+
+div.state-ArcOS-crash div.crash-content p.error {
+  margin: 15px 0;
+  font-family: "Source Code Pro";
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+div.state-ArcOS-crash div.crash-content div.actions {
+  margin-top: 25px;
+}

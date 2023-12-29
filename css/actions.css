@@ -1,0 +1,34 @@
+div.state-ArcOS-crash div.actions {
+  display: flex;
+  gap: 30px;
+  height: 40px;
+}
+
+div.state-ArcOS-crash div.actions button {
+  padding: 10px 20px;
+  border: #fff1 1px solid;
+  border-radius: 6px;
+  background-color: #fff1;
+  color: #ccc;
+}
+
+div.state-ArcOS-crash div.actions button:hover {
+  background-color: #fff2;
+}
+div.state-ArcOS-crash div.actions button:active {
+  background-color: #000;
+}
+
+div.state-ArcOS-crash div.actions button.restart {
+  background-color: #72cbff;
+  color: #000;
+  border: none;
+}
+
+div.state-ArcOS-crash div.actions button.restart:hover {
+  background-color: #b8e5ff;
+}
+
+div.state-ArcOS-crash div.actions button.restart:active {
+  background-color: #1e4b66;
+}

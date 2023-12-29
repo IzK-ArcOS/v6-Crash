@@ -1,0 +1,17 @@
+@import url("./bottom/vitenotice.css");
+div.state-ArcOS-crash div.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 30px;
+}
+
+div.state-ArcOS-crash div.bottom.more-info {
+  border-top: #fff1 1px solid;
+}
+
+div.state-ArcOS-crash div.bottom div.actions-wrapper {
+  width: 206px;
+  height: 40px;
+}

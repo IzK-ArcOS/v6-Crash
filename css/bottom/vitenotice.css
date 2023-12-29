@@ -1,0 +1,13 @@
+div.state-ArcOS-crash div.bottom div.vite-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: tomato;
+  height: 54px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+div.state-ArcOS-crash div.bottom div.vite-notice p {
+  margin: 0;
+}
