@@ -1,11 +1,11 @@
 <script lang="ts">
-  import "./css/main.css";
+  import { sleep } from "$ts/util";
+  import { onMount } from "svelte";
   import Actions from "./Components/Actions.svelte";
   import Content from "./Components/Content.svelte";
   import ViteNotice from "./Components/ViteNotice.svelte";
   import MoreInfo from "./Crash/MoreInfo.svelte";
-  import { onMount } from "svelte";
-  import { sleep } from "$ts/util";
+  import "./css/main.css";
 
   let moreInfo = false;
   let show = false;
