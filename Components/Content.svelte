@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { ProcessHandler } from "$ts/process";
   import { CrashReport } from "$ts/stores/crash";
   import Actions from "./Actions.svelte";
 
   export let moreInfo: boolean;
+  export let handler: ProcessHandler;
 </script>
 
 <div class="crash-content">
@@ -13,6 +15,6 @@
     submitted, informing us of the crash.<br /><br />
     This session can't continue. You can choose to restart.
   </p>
-  <p class="error">{$CrashReport.title}</p>
-  <Actions bind:moreInfo />
+  <p class="error">{$CrashReport ? $CrashReport.title : "No Crash Report!"}</p>
+  <Actions bind:moreInfo {handler} />
 </div>

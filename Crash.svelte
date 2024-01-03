@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ProcessRenderer from "$state/Desktop/Components/ProcessRenderer.svelte";
+  import { ProcessHandler } from "$ts/process";
   import { sleep } from "$ts/util";
   import { onMount } from "svelte";
   import Actions from "./Components/Actions.svelte";
@@ -9,6 +11,7 @@
 
   let moreInfo = false;
   let show = false;
+  let handler = new ProcessHandler("Crash");
 
   onMount(async () => {
     await sleep(500);
@@ -18,7 +21,7 @@
 
 <div class="top" class:show>
   {#if !moreInfo}
-    <Content bind:moreInfo />
+    <Content bind:moreInfo {handler} />
   {:else}
     <MoreInfo />
   {/if}
@@ -28,7 +31,8 @@
   <ViteNotice />
   <div class="actions-wrapper">
     {#if moreInfo}
-      <Actions bind:moreInfo />
+      <Actions bind:moreInfo {handler} />
     {/if}
   </div>
 </div>
+<ProcessRenderer {handler}></ProcessRenderer>
