@@ -24,7 +24,7 @@
     background-color: #000;
     color: #ccc;
     font-family: "Source Code Pro", monospace;
-    font-size: 14px;
+    font-size: var(--font-size);
     resize: none !important;
     overflow-x: hidden;
     padding: 20px;
