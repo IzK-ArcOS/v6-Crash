@@ -28,7 +28,7 @@ div.state-ArcOS-crash div.crash-content p.error {
   margin: 15px 0;
   font-family: "Source Code Pro";
   opacity: 0.5;
-  font-size: 13px;
+  font-size: var(--font-size);
 }
 
 div.state-ArcOS-crash div.crash-content div.actions {
