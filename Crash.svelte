@@ -5,9 +5,9 @@
   import { onMount } from "svelte";
   import Actions from "./Components/Actions.svelte";
   import Content from "./Components/Content.svelte";
-  import ViteNotice from "./Components/ViteNotice.svelte";
   import MoreInfo from "./Crash/MoreInfo.svelte";
   import "./css/main.css";
+  import ViteNotice from "./Components/ViteNotice.svelte";
 
   let moreInfo = false;
   let show = false;
@@ -27,12 +27,11 @@
   {/if}
 </div>
 <div class="bottom" class:show class:more-info={moreInfo}>
-  <div class="actions-wrapper" />
-  <ViteNotice />
-  <div class="actions-wrapper">
-    {#if moreInfo}
+  {#if moreInfo}
+    <ViteNotice />
+    <div class="actions-wrapper">
       <Actions bind:moreInfo {handler} />
-    {/if}
-  </div>
+    </div>
+  {/if}
 </div>
 <ProcessRenderer {handler}></ProcessRenderer>
