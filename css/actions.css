@@ -7,7 +7,7 @@ div.state-ArcOS-crash div.actions {
 div.state-ArcOS-crash div.actions button {
   padding: 10px 20px;
   border: #fff1 1px solid;
-  border-radius: 6px;
+  border-radius: var(--button-border-rad);
   background-color: #fff1;
   color: #ccc;
 }
