@@ -21,7 +21,7 @@
 
 <div class="top" class:show>
   {#if !moreInfo}
-    <Content bind:moreInfo {handler} />
+    <Content bind:moreInfo />
   {:else}
     <MoreInfo />
   {/if}
@@ -30,7 +30,7 @@
   {#if moreInfo}
     <ViteNotice />
     <div class="actions-wrapper">
-      <Actions bind:moreInfo {handler} />
+      <Actions bind:moreInfo />
     </div>
   {/if}
 </div>
